@@ -3,7 +3,7 @@ run-name: Build GoLang Source and Build Docker
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: ubuntu-latest
+    runs-on: self-host
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
