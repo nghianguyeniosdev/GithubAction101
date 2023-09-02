@@ -2,9 +2,9 @@ name: Release Docker
 run-name: Build GoLang Source and Build, Push to DockerHub
 on:
   push:
-    tags:
-      - '*'
-  # workflow_dispatch:
+    # tags:
+    #   - '*'
+    workflow_dispatch:
 jobs:
   build-and-push-to-docker-hub:
     runs-on: ubuntu-latest

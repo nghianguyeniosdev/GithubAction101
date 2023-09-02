@@ -1,5 +1,5 @@
 name: Golang101
-run-name: Build GoLang Source and Build Docker
+run-name: Build GoLang
 on:
   push:
     branches:
@@ -10,11 +10,6 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Value
-        run: |
-          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
-          echo "Tag name from github: ${{  github }}"
-          
       # - name: Checkout repository
       #   uses: actions/checkout@v3
 
