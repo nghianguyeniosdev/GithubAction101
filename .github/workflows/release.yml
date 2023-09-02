@@ -9,6 +9,9 @@ jobs:
   build-and-push-to-docker-hub:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Value
+        run: echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+         
       - name: Checkout repository
         uses: actions/checkout@v3
       
