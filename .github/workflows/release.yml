@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/golang101:${{ steps.tag_name.outputs.tag_name }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/golang101:latest
 
 
       
