@@ -1,0 +1,39 @@
+name: Release Docker
+run-name: Build GoLang Source and Build, Push to DockerHub
+on:
+  push:
+    tags:
+      - '*'
+  # workflow_dispatch:
+jobs:
+  build-and-push-to-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        run: echo "${{ steps.tag_name.outputs.tag_name }}"
+      
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.20'
+              
+      # - name: Log into Docker Hub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+      # - name: Build Docker image
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #     context: .
+      #     file: ./Dockerfile
+      #     push: true
+      #     tags: ${{ secrets.DOCKER_USERNAME }}/golang101:latest
+
+
+      
+
+
+
