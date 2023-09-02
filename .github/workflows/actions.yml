@@ -1,6 +1,11 @@
 name: Golang101
 run-name: Build GoLang Source and Build Docker
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - develop
+    workflow_dispatch:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
