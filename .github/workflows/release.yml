@@ -1,10 +1,10 @@
 name: Release Docker
 run-name: Build GoLang Source and Build, Push to DockerHub
 on:
-  push:
+  # push:
     # tags:
     #   - '*'
-    workflow_dispatch:
+  workflow_dispatch:
 jobs:
   build-and-push-to-docker-hub:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/golang101:${{  github.ref_name }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/golang101:${{ github.ref_name }}
 
 
       
