@@ -1,22 +1,27 @@
 name: Golang101
 run-name: Build GoLang Source and Build Docker
 on:
-  # push:
-  #   branches:
-  #     - main
-  #     - develop
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+  # workflow_dispatch:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Print Environment Variables
+      - name: Print Value
         run: |
-          echo "GitHub Action Environment Variables:"
-          env
+          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          echo "Tag name from github: ${{  github }}"
+          
+      # - name: Checkout repository
+      #   uses: actions/checkout@v3
+
+      # - name: Print Environment Variables
+      #   run: |
+      #     echo "GitHub Action Environment Variables:"
+      #     env
       
       - name: Set up Go
         uses: actions/setup-go@v2
