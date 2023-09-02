@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Test Print Key
+      - name: Test Print Key 1
         run: echo "${{ steps.tag_name.outputs.tag_name }}"
       
       - name: Set up Go
